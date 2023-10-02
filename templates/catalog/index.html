@@ -1,0 +1,66 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+     <div class="container mx-auto">
+          {% if messages %}
+        <div class="alert alert-primary shadow-lg">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>{% for message in messages %}
+                        {{ message }}
+                    {% endfor %}</span>
+          </div>
+        </div>
+        {% endif %}
+     </div>
+    <div class="hero bg-base-100">
+        <div class="hero-content flex-col lg:flex-row">
+          <img src="{% static './images/257205.jpg' %}" class="max-w-sm rounded-lg shadow-2xl mr-10" />
+          <div>
+            <h1 class="text-5xl font-bold">Магазин «Книжный Город»</h1>
+            <p class="py-6" style="text-align: justify;">
+                «Книжный город» является самым крупным в Казахстане книжным магазином, в котором представлено около 80 000 наименований книг.
+            </p>
+            <a href="{% url "catalog:store_home" %}" class="btn btn-dark">ПРОСМОТРЕТЬ КАТАЛОГ</a>
+          </div>
+        </div>
+    </div>
+    <!-- <div class="slidershow middle">
+
+      <div class="slides">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <input type="radio" name="r" id="r5">
+        <div class="slide s1">
+          <a href="{% url "catalog:store_home" %}">
+            <img src="{% static './images/[1920X1080] Fight Club Wallpaper!.jpg' %}" alt="">  
+          </a>  
+        </div>
+        <div class="slide">
+          <img src="{% static './images/The Thorn Birds starring Richard Chamberlain & Rachel Ward Aired March 27, 1983_.jpg' %}" alt="">
+        </div>
+        <div class="slide">
+          <img src="{% static './images/[1920X1080] Fight Club Wallpaper!.jpg' %}" alt="">
+        </div>
+        <div class="slide">
+          <img src="{% static './images/[1920X1080] Fight Club Wallpaper!.jpg'' %}" alt="">
+        </div>
+        <div class="slide">
+          <img src="{% static './images/[1920X1080] Fight Club Wallpaper!.jpg'' %}" alt="">
+        </div>
+      </div>
+
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+        <label for="r5" class="bar"></label>
+      </div>
+    </div> -->
+    
+{% endblock %}
